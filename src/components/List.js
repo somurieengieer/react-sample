@@ -7,13 +7,15 @@ let style = {
 const List = (props) => (
   <div className="list">
     {props.todos.map((todo, i) => {
-      return <div className="list-item columns" style={style}>
-        <span className="label column">{todo.title}</span>
-        <div className="column">
-          <button className="button is-primary" onClick={() => props.handleRemove(i)}>Delete</button>
+      return <div className="list-item" style={style}>
+        <div className="columns">
+          <span className="label column label">{todo.title}</span>
+          <div className="column">
+            <button className="button is-primary" onClick={() => props.handleRemove(i)}>Delete</button>
+          </div>
         </div>
       </div>
-    })};
+    })}
   </div>
 );
 
