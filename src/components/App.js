@@ -10,6 +10,7 @@ export default class App extends Component {
       todo: []
     };
     this.handleAdd = this.handleAdd.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   handleAdd(e) {
@@ -19,11 +20,16 @@ export default class App extends Component {
     e.target.title.value='';
   }
 
+  handleRemove(i) {
+    this.state.todo.splice(i, 1);
+    this.setState({todo: this.state.todo});
+  }
+
   render() {
     return (
       <div className="App">
         <Form handleAdd={this.handleAdd}/>
-        <List todos={this.state.todo}/>
+        <List todos={this.state.todo} handleRemove={this.handleRemove}/>
       </div>
     );
   }

@@ -10,7 +10,7 @@ const List = (props) => (
       return <div className="list-item columns" style={style}>
         <span className="label column">{todo.title}</span>
         <div className="column">
-          <button className="button is-primary">Delete</button>
+          <button className="button is-primary" onClick={() => props.handleRemove(i)}>Delete</button>
         </div>
       </div>
     })};
